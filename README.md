@@ -2,18 +2,18 @@
 <h1>Phoenix Demo on HDP sandbox 2.3</h1>
 
 <hr>
-Enviroment preparations before the demo: 
+<h2>Enviroment preparations before the demo: </h2>
 
 
 
 
 
-Set all required special parameter in hbase-site.xml for phoenix secondary indexes
-Copy the phoenix-server jar to the Hbase lib directory
+--Set all required special parameter in hbase-site.xml for phoenix secondary indexes
+--Copy the phoenix-server jar to the Hbase lib directory
 
-Restart HBASE
+--Restart HBASE
 
-log in to sqlline.py
+--log in to sqlline.py
 
 drop table diagnosis.VOD;
 drop view  channelHistoryDevices;
