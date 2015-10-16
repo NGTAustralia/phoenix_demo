@@ -15,10 +15,10 @@
 
 --log in to sqlline.py
 
-drop table diagnosis.VOD;
-drop view  channelHistoryDevices;
-drop table diagnosis.channelHistory;
-drop table VOD_noschema;
+drop table diagnosis.VOD; </br>
+drop view  channelHistoryDevices; </br>
+drop table diagnosis.channelHistory; </br>
+drop table VOD_noschema; </br>
 
 
 
@@ -27,24 +27,24 @@ eventTime TIME NOT NULL ,
 modemId BIGINT,
 movieId BIGINT ,
 movieName CHAR(250) ,
-watchedTillTheEnd BOOLEAN,price BIGINT, CONSTRAINT pk PRIMARY KEY (customerId, eventTime)) SALT_BUCKETS=2;
+watchedTillTheEnd BOOLEAN,price BIGINT, CONSTRAINT pk PRIMARY KEY (customerId, eventTime)) SALT_BUCKETS=2; </br>
 
-create table VOD_noschema(customerId BIGINT NOT NULL,
-eventTime TIME NOT NULL ,
-modemId BIGINT,
-movieId BIGINT ,
-movieName CHAR(250) ,
-watchedTillTheEnd BOOLEAN,price BIGINT, CONSTRAINT pk PRIMARY KEY (customerId, eventTime));
+create table VOD_noschema(customerId BIGINT NOT NULL,</br>
+eventTime TIME NOT NULL ,</br>
+modemId BIGINT,</br>
+movieId BIGINT ,</br>
+movieName CHAR(250) ,</br>
+watchedTillTheEnd BOOLEAN,price BIGINT, CONSTRAINT pk PRIMARY KEY (customerId, eventTime)); </br>
 
 
 
-create table diagnosis.channelHistory(
-customerId BIGINT NOT NULL, 
-eventTime TIME NOT NULL,
-modemId BIGINT , 
-channelId BIGINT, 
-watchingLength BIGINT  
-  , constraint pk primary key(customerId, eventTime));
+create table diagnosis.channelHistory(</br>
+customerId BIGINT NOT NULL, </br>
+eventTime TIME NOT NULL,</br>
+modemId BIGINT , </br>
+channelId BIGINT, </br>
+watchingLength BIGINT</br>  
+  , constraint pk primary key(customerId, eventTime)); </br>
   
     
   
