@@ -1,5 +1,5 @@
 
-Phoenix Demo on HDP sandbox 2.3
+<b>Phoenix Demo on HDP sandbox 2.3</b>
 
 Enviroment preperations before the demo: 
 
