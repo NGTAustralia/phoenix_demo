@@ -1,7 +1,8 @@
 
 <b>Phoenix Demo on HDP sandbox 2.3</b>
 
-Enviroment preperations before the demo: 
+<hr>
+Enviroment preparations before the demo: 
 
 
 
@@ -55,9 +56,9 @@ upsert into  diagnosis.vod values(1235,TO_DATE('2014-08-22', 'yyyy-MM-dd', 'GMT+
 upsert into  diagnosis.vod values(1237,TO_DATE('2015-08-23', 'yyyy-MM-dd', 'GMT+1'),4458,964,'Titanic',True,21);
 
 upsert into  vod_noschema values (1234,current_date(),4456,999,'The Lion King',True,21);
+<hr>
 
-
-The Demo:
+<h1>The Demo:</h1>
 
 cd /usr/hdp/2.3.0.0-2130/phoenix/bin
 python sqlline.py  localhost:2181
