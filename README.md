@@ -1,5 +1,5 @@
 
-<b>Phoenix Demo on HDP sandbox 2.3</b>
+<h1>Phoenix Demo on HDP sandbox 2.3</h1>
 
 <hr>
 Enviroment preparations before the demo: 
@@ -65,7 +65,7 @@ python sqlline.py  localhost:2181
 (by default, in hdp, the hbase node in the zookeeper is called hbase-unsecured
 and then you need to loging with: python sqlline.py  localhost:2181:/hbase-unsecured )
 
-show table creation sample 
+<h2>show table creation sample </h2>
 Not for run, already exists:  
 
 create table diagnosis.VOD
@@ -79,7 +79,7 @@ price INTEGER,
 CONSTRAINT pk PRIMARY KEY (customerId, eventTime)) 
 SALT_BUCKETS=2;
 
---Using the key:
+<h2>Using the key:</h2>
 explain select customerid from diagnosis.vod where customerid=1234;
   
 select count(*) from diagnosis.vod;  
@@ -89,7 +89,7 @@ upsert into  diagnosis.vod values(1234,TO_DATE('2015-02-13', 'yyyy-MM-dd', 'GMT+
 select count(*) from diagnosis.vod ; 
 --no Change!
 
---Secondary Indexes (mutable / not mutable):
+<h2>Secondary Indexes (mutable / not mutable):</h2>
 
 CREATE INDEX movie_idx  ON diagnosis.vod(movieid DESC) INCLUDE (moviename) SALT_BUCKETS=2;
 
@@ -101,7 +101,7 @@ explain select count(*)  from diagnosis.vod where movieid=999;
 --Many tuning options
 --performances: http://phoenix-bin.github.io/client/performance/latest.htm
 
---Dynamic columns:
+<h2>Dynamic columns:</h2>
 --upsert static record:
 
 UPSERT INTO diagnosis.channelhistory
@@ -143,7 +143,7 @@ WHERE deviceId>400;
 SELECT customerId,eventTime,channelId,deviceType
 FROM diagnosis.channelHistory(deviceType CHAR(250));
 
---VIEWS:
+<h2>VIEWS:</h2>
 --	You must create the view with “select *”
 
 --View over table that has dynamic columns:
@@ -159,7 +159,7 @@ select customerid, devicetype  FROM channelHistoryDevices ;
 
 
 
---Joins : 
+<h2>Joins : </h2>
 SELECT  v.customerId,v.movieid,c.channelid
 FROM diagnosis.VOD AS v
 INNER JOIN diagnosis.channelHistory AS c
@@ -170,7 +170,7 @@ where v.movieid=999;
 --Phoenix now has both hash join and sort-merge join  (SE_SORT_MERGE_JOIN hint)
 --There are more configurations, and nice optimizations that were implemented.
 
---Spark loading and Processing
+<h2>Spark loading and Processing </h2>
 
 --Basic support for column and predicate pushdown using the Data Source API
 --The Data Source API does not support passing custom Phoenix settings in configuration, you must create the DataFrame or RDD directly if you need fine-grained configuration.
